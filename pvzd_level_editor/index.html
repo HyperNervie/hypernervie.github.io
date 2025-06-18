@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-i18n="title"></title>
+<style id="stylesheet">*{box-sizing:border-box}body{font-family:Arial,sans-serif;margin:0;padding:20px;background-color:#f5f5f5}.lang-select-container{text-align:center}.container{max-width:1200px;margin:0 auto;background-color:white;padding:20px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}.hidden{display:none}h1{text-align:center;color:#333}.editor-section{margin-bottom:20px;padding:15px;border:1px solid #ddd;border-radius:5px}.editor-section h2{margin-top:0;font-size:18px;color:#444}.form-group{margin-bottom:10px}label{margin-bottom:5px;font-weight:bold}input[type="text"],input[type="number"],select{width:100%;padding:8px;border:1px solid #ddd;border-radius:4px}textarea{max-width:100%;min-width:100%;height:100px;padding:8px;border:1px solid #ddd;border-radius:4px}.checkbox-group{margin-top:5px}.checkbox-item{margin-bottom:5px}.array-input{margin-top:5px}.array-item{display:flex;margin-bottom:5px}.array-item input{flex:1;margin-right:5px}.array-item button{width:30px}.add-button{margin-top:5px}.json-output{padding:15px;background-color:#f8f8f8;border:1px solid #ddd;border-radius:4px;white-space:pre;overflow-x:scroll;font-family:monospace}.json-output.json-output-minimal{overflow-x:initial;white-space:normal;word-break:break-all}.copy-button,.toggle-button{padding:8px 15px;background-color:#4CAF50;color:white;border:none;border-radius:4px;cursor:pointer}.copy-button:hover,.toggle-button:hover{background-color:#45a049}.copy-button{margin-top:10px}.toggle-button{float:right}</style>
+</head>
+<body>
+<div class="container">
+<h1 data-i18n="header"></h1>
+<p class="lang-select-container">
+<a class="lang-select" href="javascript:changeLang('zh-CN')">中文</a>
+<a class="lang-select" href="javascript:changeLang('en')">English</a>
+</p>
+<p data-i18n="wip"></p>
+<div id="editor-container">
+<div class="editor-section"><h2 data-i18n="LevelProperty"></h2>
+<div class="form-group">
+<label for="LevelProperty.Name"></label>
+<input id="LevelProperty.Name" type="text"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.ChineseName"></label>
+<input id="LevelProperty.ChineseName" type="text"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.EnglishName"></label>
+<input id="LevelProperty.EnglishName" type="text"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.Icon"></label>
+<select id="LevelProperty.Icon">
+<optgroup data-i18n-label="Puzzle">
+<option selected="" value="10"></option>
+<option value="11"></option>
+</optgroup>
+<optgroup data-i18n-label="MiniGames">
+<option value="0"></option>
+<option value="1"></option>
+<option value="2"></option>
+<option value="3"></option>
+<option value="4"></option>
+<option value="5"></option>
+<option value="6"></option>
+<option value="7"></option>
+<option value="8"></option>
+<option value="9"></option>
+<option value="12"></option>
+<option value="13"></option>
+<option value="14"></option>
+<option value="15"></option>
+<option value="16"></option>
+<option value="17"></option>
+<option value="18"></option>
+<option value="19"></option>
+<option value="20"></option>
+<option value="21"></option>
+</optgroup>
+<optgroup data-i18n-label="Survival">
+<option value="22"></option>
+<option value="23"></option>
+<option value="24"></option>
+<option value="25"></option>
+<option value="26"></option>
+<option value="27"></option>
+<option value="28"></option>
+<option value="29"></option>
+<option value="30"></option>
+<option value="31"></option>
+<option value="32"></option>
+</optgroup>
+<optgroup data-i18n-label="Vanilla">
+<option value="33"></option>
+<option value="34"></option>
+<option value="35"></option>
+<option value="36"></option>
+<option value="37"></option>
+<option value="38"></option>
+</optgroup>
+<optgroup data-i18n-label="GreatWall">
+<option value="39"></option>
+<option value="40"></option>
+<option value="41"></option>
+</optgroup>
+<optgroup data-i18n-label="JourneyToTheWest">
+<option value="42"></option>
+<option value="43"></option>
+<option value="44"></option>
+<option value="45"></option>
+<option value="46"></option>
+<option value="47"></option>
+<option value="48"></option>
+</optgroup>
+<optgroup data-i18n-label="Endless">
+<option value="49"></option>
+<option value="50"></option>
+</optgroup>
+<optgroup data-i18n-label="OfficialScrap">
+<option value="51"></option>
+</optgroup>
+<optgroup data-i18n-label="Crossover">
+<option value="52"></option>
+<option value="53"></option>
+<option value="54"></option>
+<option value="55"></option>
+<option value="56"></option>
+<option value="57"></option>
+<option value="58"></option>
+</optgroup>
+</select>
+</div>
+<div class="form-group">
+<label for="LevelProperty.IconImage"></label>
+<textarea data-i18n-placeholder="" id="LevelProperty.IconImage"></textarea>
+<label data-i18n="LevelProperty.IconImage.loader" for="load-icon"></label>
+<input accept="image/jpeg,image/png" id="load-icon" type="file"/>
+<p></p>
+</div>
+<div class="form-group">
+<label for="LevelProperty.Background"></label>
+<select id="LevelProperty.Background">
+<optgroup data-i18n-label="Vanilla">
+<option selected="" value="0"></option>
+<option value="1"></option>
+<option value="2"></option>
+<option value="3"></option>
+<option value="4"></option>
+<option value="5"></option>
+</optgroup>
+<optgroup data-i18n-label="ZenGarden">
+<option value="7"></option>
+<option value="6"></option>
+<option value="8"></option>
+<option value="9"></option>
+</optgroup>
+<optgroup data-i18n-label="OfficialScrap">
+<option value="100"></option>
+</optgroup>
+<optgroup data-i18n-label="GreatWall">
+<option value="300"></option>
+<option value="301"></option>
+<option value="302"></option>
+</optgroup>
+<optgroup data-i18n-label="JourneyToTheWest">
+<option value="400"></option>
+<option value="401"></option>
+<option value="402"></option>
+<option value="403"></option>
+<option value="404"></option>
+<option value="405"></option>
+<option value="406"></option>
+</optgroup>
+<optgroup data-i18n-label="Endless">
+<option value="500"></option>
+<option value="501"></option>
+</optgroup>
+<optgroup data-i18n-label="NDS">
+<option value="700"></option>
+</optgroup>
+<optgroup data-i18n-label="Crossover">
+<option value="900"></option>
+<option value="901"></option>
+<option value="904"></option>
+<option value="905"></option>
+<option value="902"></option>
+<option value="903"></option>
+<option value="906"></option>
+<option value="907"></option>
+<option value="908"></option>
+<option value="909"></option>
+<option value="910"></option>
+<option value="911"></option>
+</optgroup>
+</select>
+</div>
+<div class="form-group">
+<label for="LevelProperty.InitPlantColumn"></label>
+<input id="LevelProperty.InitPlantColumn" max="9" min="0" type="number" value="0"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.NumWaves"></label>
+<input id="LevelProperty.NumWaves" min="0" type="number" value="40"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.WavesPerFlag"></label>
+<input id="LevelProperty.WavesPerFlag" min="1" type="number" value="10"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.StartingSun"></label>
+<input id="LevelProperty.StartingSun" max="99990" min="0" step="5" type="number" value="50"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.StartingWave"></label>
+<input id="LevelProperty.StartingWave" min="0" type="number" value="0"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.StartingTime"></label>
+<input id="LevelProperty.StartingTime" min="0" type="number" value="1800"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.MaxPlainZombiesPerFlag"></label>
+<input id="LevelProperty.MaxPlainZombiesPerFlag" min="0" type="number" value="8"/>
+</div>
+<div class="form-group">
+<label for="LevelProperty.MusicType"></label>
+<select id="LevelProperty.MusicType">
+<option selected="" value="-1"></option>
+<option value="0"></option>
+<option value="1"></option>
+<option value="2"></option>
+<option value="3"></option>
+<option value="4"></option>
+<option value="5"></option>
+<option value="6"></option>
+<option value="7"></option>
+<option value="8"></option>
+<option value="9"></option>
+<option value="10"></option>
+<option value="11"></option>
+<option value="12"></option>
+<option value="13"></option>
+<option value="23"></option>
+<option value="24"></option>
+<option value="14"></option>
+<option value="15"></option>
+<option value="16"></option>
+<option value="17"></option>
+<option value="18"></option>
+<option value="19"></option>
+<option value="20"></option>
+<option value="22"></option>
+<option value="25"></option>
+<option value="29"></option>
+<option value="30"></option>
+<option value="27"></option>
+<option value="28"></option>
+<option value="32"></option>
+<option value="26"></option>
+<option value="31"></option>
+<option value="21"></option>
+</select>
+</div>
+<div class="checkbox-item">
+<input id="LevelProperty.EasyUpgrade" type="checkbox"/>
+<label for="LevelProperty.EasyUpgrade"></label>
+</div>
+<div class="checkbox-item">
+<input checked="" id="LevelProperty.SpawnFlagZombie" type="checkbox"/>
+<label for="LevelProperty.SpawnFlagZombie"></label>
+</div></div>
+</div>
+<div>
+<label data-i18n="json.import" for="import-json"></label>
+<input accept=".json" id="import-json" type="file"/>
+</div>
+<p>
+<button class="copy-button" data-i18n="json.generate" id="generate-json"></button>
+<button class="copy-button" data-i18n="json.copy" id="copy-json"></button>
+<button class="copy-button" data-i18n="json.save" id="save-json"></button>
+</p>
+<div class="checkbox-item">
+<input id="minimal-json" type="checkbox"/>
+<label data-i18n="json.minimal" for="minimal-json"></label>
+</div>
+<div class="json-output" id="json-output"></div>
+</div>
+<script id="script">const LANGS={'en':true,'zh-CN':true};function i18n(key){const dict={"en":{"title":"PvZ Deluxe - Level Editor","header":"LEVEL EDITOR","wip":"This level editor is a work in progress! Stay tuned for support for more level components...","LevelProperty":"Level Properties","LevelProperty.Name":"General level name","LevelProperty.ChineseName":"Chinese level name","LevelProperty.EnglishName":"English level name","LevelProperty.Icon":"Level icon","LevelProperty.Icon.Puzzle":"Puzzle Mode","LevelProperty.Icon.MiniGames":"Mini-Games","LevelProperty.Icon.Survival":"Survival Mode","LevelProperty.Icon.Vanilla":"Vanilla Scenes","LevelProperty.Icon.GreatWall":"The Great Wall Edition Scenes","LevelProperty.Icon.JourneyToTheWest":"Journey to the West Edition Scenes","LevelProperty.Icon.Endless":"Endless Edition Scenes","LevelProperty.Icon.OfficialScrap":"Scrapped Scenes","LevelProperty.Icon.Crossover":"Crossover Scenes","LevelProperty.Icon.0":"Zombotany","LevelProperty.Icon.1":"Beghouled","LevelProperty.Icon.2":"Slot Machine","LevelProperty.Icon.3":"It's Raining Seeds","LevelProperty.Icon.4":"Column Like You See 'Em","LevelProperty.Icon.5":"Seeing Stars","LevelProperty.Icon.6":"Wall-nut Bowling","LevelProperty.Icon.7":"Zombiquarium","LevelProperty.Icon.8":"Invisi-ghoul","LevelProperty.Icon.9":"Bungee Blitz","LevelProperty.Icon.10":"Vasebreaker","LevelProperty.Icon.11":"I, Zombie","LevelProperty.Icon.12":"Big Trouble Little Zombie","LevelProperty.Icon.13":"Dark Stormy Night","LevelProperty.Icon.14":"Pogo Party","LevelProperty.Icon.15":"Portal Combat","LevelProperty.Icon.16":"Whack a Zombie","LevelProperty.Icon.17":"Bobsled Bonanza","LevelProperty.Icon.18":"Zombie Nibble Zombie Quick","LevelProperty.Icon.19":"Dr. Zomboss's Revenge","LevelProperty.Icon.20":"Beghouled Twist","LevelProperty.Icon.21":"Last Stand","LevelProperty.Icon.22":"Survival: Day","LevelProperty.Icon.23":"Survival: Night","LevelProperty.Icon.24":"Survival: Pool","LevelProperty.Icon.25":"Survival: Fog","LevelProperty.Icon.26":"Survival: Roof","LevelProperty.Icon.27":"Survival: Day (Hard)","LevelProperty.Icon.28":"Survival: Night (Hard)","LevelProperty.Icon.29":"Survival: Pool (Hard)","LevelProperty.Icon.30":"Survival: Fog (Hard)","LevelProperty.Icon.31":"Survival: Roof (Hard)","LevelProperty.Icon.32":"Survival: Endless","LevelProperty.Icon.33":"Day","LevelProperty.Icon.34":"Night","LevelProperty.Icon.35":"Pool","LevelProperty.Icon.36":"Fog","LevelProperty.Icon.37":"Roof","LevelProperty.Icon.38":"Moon","LevelProperty.Icon.39":"The Great Wall: Day","LevelProperty.Icon.40":"The Great Wall: Night","LevelProperty.Icon.41":"The Great Wall: Pool","LevelProperty.Icon.42":"Cobwebby Caves","LevelProperty.Icon.43":"Hill of Bones","LevelProperty.Icon.44":"Thunder Temple","LevelProperty.Icon.45":"Flaming Mountains","LevelProperty.Icon.46":"Bull Demon King's Palace (Bottom)","LevelProperty.Icon.47":"Bull Demon King's Palace (Middle)","LevelProperty.Icon.48":"Bull Demon King's Palace (Top)","LevelProperty.Icon.49":"Dragon Palace","LevelProperty.Icon.50":"Dave's Back Garden","LevelProperty.Icon.51":"Highground","LevelProperty.Icon.52":"Rainforest: Day","LevelProperty.Icon.53":"Rainforest: Night","LevelProperty.Icon.54":"Forest: Day","LevelProperty.Icon.55":"Forest: Night","LevelProperty.Icon.56":"Chinese Gardens","LevelProperty.Icon.57":"Flat Mountains: Day","LevelProperty.Icon.58":"Flat Mountains: Night","LevelProperty.IconImage":"Custom level icon","LevelProperty.IconImage.placeholder":"jpeg/png image encoded with base64, 80×65 resolution jpeg recommended","LevelProperty.IconImage.loader":"Convert a local image to base64:","LevelProperty.Background":"Scene","LevelProperty.Background.Vanilla":"Vanilla","LevelProperty.Background.ZenGarden":"Zen Garden","LevelProperty.Background.OfficialScrap":"Scrapped","LevelProperty.Background.GreatWall":"The Great Wall Edition","LevelProperty.Background.JourneyToTheWest":"Journey to the West Edition","LevelProperty.Background.Endless":"Endless Edition","LevelProperty.Background.NDS":"Nintendo DS","LevelProperty.Background.Crossover":"Crossover","LevelProperty.Background.0":"Day","LevelProperty.Background.1":"Night","LevelProperty.Background.2":"Pool","LevelProperty.Background.3":"Fog","LevelProperty.Background.4":"Roof","LevelProperty.Background.5":"Moon","LevelProperty.Background.6":"Mushroom Garden","LevelProperty.Background.7":"Greenhouse","LevelProperty.Background.8":"Aquarium Garden","LevelProperty.Background.9":"Tree of Wisdom","LevelProperty.Background.100":"Highground","LevelProperty.Background.300":"The Great Wall: Day","LevelProperty.Background.301":"The Great Wall: Night","LevelProperty.Background.302":"The Great Wall: Pool","LevelProperty.Background.400":"Cobwebby Caves","LevelProperty.Background.401":"Hill of Bones","LevelProperty.Background.402":"Thunder Temple","LevelProperty.Background.403":"Flaming Mountains","LevelProperty.Background.404":"Bull Demon King's Palace (Bottom)","LevelProperty.Background.405":"Bull Demon King's Palace (Middle)","LevelProperty.Background.406":"Bull Demon King's Palace (Top)","LevelProperty.Background.500":"Dave's Back Garden","LevelProperty.Background.501":"Dragon Palace","LevelProperty.Background.700":"Air Raid","LevelProperty.Background.900":"Rainforest: Day (WWWWWW)","LevelProperty.Background.901":"Rainforest: Day (WWLLWW)","LevelProperty.Background.902":"Forest: Day","LevelProperty.Background.903":"Forest: Night","LevelProperty.Background.904":"Rainforest: Day (LLLLLL)","LevelProperty.Background.905":"Rainforest: Night (LLLLLL)","LevelProperty.Background.906":"Chinese Gardens (LWLWL)","LevelProperty.Background.907":"Chinese Gardens (LWWWL)","LevelProperty.Background.908":"Chinese Gardens (WLWLW)","LevelProperty.Background.909":"Chinese Gardens (WWLWW)","LevelProperty.Background.910":"Flat Mountains: Day","LevelProperty.Background.911":"Flat Mountains: Night","LevelProperty.InitPlantColumn":"Initial Lilypad/Flower Pot columns","LevelProperty.EasyUpgrade":"Upgrade plants can be planted directly","LevelProperty.NumWaves":"Waves of zombies","LevelProperty.WavesPerFlag":"Waves per flag","LevelProperty.StartingSun":"Starting sun","LevelProperty.StartingWave":"Starting waves without zombies","LevelProperty.StartingTime":"Centiseconds before the first wave","LevelProperty.SpawnFlagZombie":"Spawn a Flag Zombie each flag wave","LevelProperty.MaxPlainZombiesPerFlag":"Minimum Basic Zombies each flag wave","LevelProperty.MusicType":"Music","LevelProperty.MusicType.-1":"Follow scene","LevelProperty.MusicType.0":"Mute","LevelProperty.MusicType.1":"Day (Grasswalk)","LevelProperty.MusicType.2":"Night (Moongrains)","LevelProperty.MusicType.3":"Pool (Watery Graves)","LevelProperty.MusicType.4":"Fog (Rigor Mormist)","LevelProperty.MusicType.5":"Roof (Graze the Roof)","LevelProperty.MusicType.6":"Choose Your Seeds","LevelProperty.MusicType.7":"Main Menu","LevelProperty.MusicType.8":"Puzzle (Cerebrawl)","LevelProperty.MusicType.9":"Mini-Game (Loonboon)","LevelProperty.MusicType.10":"Conveyor Belt (Ultimate Battle)","LevelProperty.MusicType.11":"Boss Battle (Brainiac Maniac)","LevelProperty.MusicType.12":"Zen Garden","LevelProperty.MusicType.13":"The Great Wall: Day","LevelProperty.MusicType.14":"Cobwebby Caves","LevelProperty.MusicType.15":"Hill of Bones","LevelProperty.MusicType.16":"Thunder Temple","LevelProperty.MusicType.17":"Flaming Mountains","LevelProperty.MusicType.18":"Bull Demon King's Palace","LevelProperty.MusicType.19":"Dragon Palace","LevelProperty.MusicType.20":"Journey to the West: Boss Battle","LevelProperty.MusicType.21":"We Are The World","LevelProperty.MusicType.22":"Dave's Back Garden","LevelProperty.MusicType.23":"The Great Wall: Night","LevelProperty.MusicType.24":"The Great Wall: Pool","LevelProperty.MusicType.25":"Rainforest","LevelProperty.MusicType.26":"PvZ3 Campground","LevelProperty.MusicType.27":"Forest: Day","LevelProperty.MusicType.28":"Forest: Night","LevelProperty.MusicType.29":"Rainforest: Boss Battle 1","LevelProperty.MusicType.30":"Rainforest: Boss Battle 2","LevelProperty.MusicType.31":"Zombies On Your Lawn","LevelProperty.MusicType.32":"Chinese Gardens","json.import":"Import an existing level file:","json.import.parse_error":"Import failed: The selected file is not a valid JSON.","json.import.invalid_root":"Import failed: The root object of the JSON does not match the expected format of level data.","json.generate":"Generate JSON","json.copy":"Copy to clipboard","json.copy.success":"JSON successfully copied to clipboard!","json.copy.failure":"Failed to copy JSON to clipboard. Please try copying manually or saving it as a file.","json.save":"Save as file","json.minimal":"Minimal JSON"},"zh-CN":{"title":"植物大战僵尸精华版关卡编辑器","header":"关卡编辑器","wip":"编辑器还在开发中！敬请期待更多关卡组件的支持……","LevelProperty":"关卡属性","LevelProperty.Name":"通用关卡名","LevelProperty.ChineseName":"中文关卡名","LevelProperty.EnglishName":"英文关卡名","LevelProperty.Icon":"关卡图标","LevelProperty.Icon.Puzzle":"解谜模式","LevelProperty.Icon.MiniGames":"迷你游戏","LevelProperty.Icon.Survival":"生存模式","LevelProperty.Icon.Vanilla":"原版场景","LevelProperty.Icon.GreatWall":"长城版场景","LevelProperty.Icon.JourneyToTheWest":"西游版场景","LevelProperty.Icon.Endless":"无尽版场景","LevelProperty.Icon.OfficialScrap":"官方废稿场景","LevelProperty.Icon.Crossover":"联动场景","LevelProperty.Icon.0":"植物僵尸","LevelProperty.Icon.1":"宝石迷阵","LevelProperty.Icon.2":"拉霸","LevelProperty.Icon.3":"雨中种植物","LevelProperty.Icon.4":"排山倒海","LevelProperty.Icon.5":"观星","LevelProperty.Icon.6":"坚果保龄球","LevelProperty.Icon.7":"僵尸水族馆","LevelProperty.Icon.8":"隐形战争","LevelProperty.Icon.9":"蹦极闪电战","LevelProperty.Icon.10":"破罐者","LevelProperty.Icon.11":"我是僵尸","LevelProperty.Icon.12":"小僵尸大麻烦","LevelProperty.Icon.13":"黑暗的暴风雨夜","LevelProperty.Icon.14":"蹦蹦舞会","LevelProperty.Icon.15":"保护传送门","LevelProperty.Icon.16":"锤僵尸","LevelProperty.Icon.17":"雪橇区","LevelProperty.Icon.18":"僵尸快跑","LevelProperty.Icon.19":"僵王博士的复仇","LevelProperty.Icon.20":"宝石迷阵旋风","LevelProperty.Icon.21":"坚不可摧","LevelProperty.Icon.22":"生存模式：白天","LevelProperty.Icon.23":"生存模式：黑夜","LevelProperty.Icon.24":"生存模式：泳池","LevelProperty.Icon.25":"生存模式：迷雾","LevelProperty.Icon.26":"生存模式：屋顶","LevelProperty.Icon.27":"生存模式：白天（困难）","LevelProperty.Icon.28":"生存模式：黑夜（困难）","LevelProperty.Icon.29":"生存模式：泳池（困难）","LevelProperty.Icon.30":"生存模式：迷雾（困难）","LevelProperty.Icon.31":"生存模式：屋顶（困难）","LevelProperty.Icon.32":"生存模式：无尽","LevelProperty.Icon.33":"前院白天","LevelProperty.Icon.34":"前院黑夜","LevelProperty.Icon.35":"泳池白天","LevelProperty.Icon.36":"泳池黑夜","LevelProperty.Icon.37":"屋顶白天","LevelProperty.Icon.38":"屋顶黑夜","LevelProperty.Icon.39":"长城白天","LevelProperty.Icon.40":"长城黑夜","LevelProperty.Icon.41":"长城泳池","LevelProperty.Icon.42":"盘丝洞","LevelProperty.Icon.43":"白骨岭","LevelProperty.Icon.44":"雷音寺","LevelProperty.Icon.45":"火焰山","LevelProperty.Icon.46":"牛魔王宫殿（底层）","LevelProperty.Icon.47":"牛魔王宫殿（中层）","LevelProperty.Icon.48":"牛魔王宫殿（顶层）","LevelProperty.Icon.49":"龙宫","LevelProperty.Icon.50":"戴夫的后花园","LevelProperty.Icon.51":"高地黑夜","LevelProperty.Icon.52":"雨林白天","LevelProperty.Icon.53":"雨林黑夜","LevelProperty.Icon.54":"森林白天","LevelProperty.Icon.55":"森林黑夜","LevelProperty.Icon.56":"中国园林","LevelProperty.Icon.57":"平顶山白天","LevelProperty.Icon.58":"平顶山黑夜","LevelProperty.IconImage":"自定义关卡图标","LevelProperty.IconImage.placeholder":"base64编码的jpeg/png图像，建议80×65分辨率jpeg","LevelProperty.IconImage.loader":"将本地图片转换为base64编码：","LevelProperty.Background":"场景","LevelProperty.Background.Vanilla":"原版","LevelProperty.Background.ZenGarden":"禅境花园","LevelProperty.Background.OfficialScrap":"原版废稿","LevelProperty.Background.GreatWall":"长城版","LevelProperty.Background.JourneyToTheWest":"西游版","LevelProperty.Background.Endless":"无尽版","LevelProperty.Background.NDS":"NDS版","LevelProperty.Background.Crossover":"联动","LevelProperty.Background.0":"前院白天","LevelProperty.Background.1":"前院黑夜","LevelProperty.Background.2":"泳池白天","LevelProperty.Background.3":"泳池黑夜","LevelProperty.Background.4":"屋顶白天","LevelProperty.Background.5":"屋顶黑夜","LevelProperty.Background.6":"蘑菇园","LevelProperty.Background.7":"温室","LevelProperty.Background.8":"水族馆","LevelProperty.Background.9":"智慧树","LevelProperty.Background.100":"高地黑夜","LevelProperty.Background.300":"长城白天","LevelProperty.Background.301":"长城黑夜","LevelProperty.Background.302":"长城泳池","LevelProperty.Background.400":"盘丝洞","LevelProperty.Background.401":"白骨岭","LevelProperty.Background.402":"雷音寺","LevelProperty.Background.403":"火焰山","LevelProperty.Background.404":"牛魔王宫殿（底层）","LevelProperty.Background.405":"牛魔王宫殿（中层）","LevelProperty.Background.406":"牛魔王宫殿（顶层）","LevelProperty.Background.500":"戴夫的后花园","LevelProperty.Background.501":"龙宫","LevelProperty.Background.700":"空战","LevelProperty.Background.900":"雨林白天（全水路）","LevelProperty.Background.901":"雨林白天（原版泳池反转）","LevelProperty.Background.902":"雨林白天（全陆地）","LevelProperty.Background.903":"雨林黑夜（全陆地）","LevelProperty.Background.904":"森林白天","LevelProperty.Background.905":"森林黑夜","LevelProperty.Background.906":"中国园林（陆水陆水陆）","LevelProperty.Background.907":"中国园林（陆水水水陆）","LevelProperty.Background.908":"中国园林（水陆水陆水）","LevelProperty.Background.909":"中国园林（水水陆水水）","LevelProperty.Background.910":"平顶山白天","LevelProperty.Background.911":"平顶山黑夜","LevelProperty.InitPlantColumn":"初始莲叶/花盆列数","LevelProperty.EasyUpgrade":"紫卡可直接种植","LevelProperty.NumWaves":"僵尸波数","LevelProperty.WavesPerFlag":"每旗帜波数","LevelProperty.StartingSun":"初始阳光","LevelProperty.StartingWave":"不出怪波数","LevelProperty.StartingTime":"首波前厘秒数","LevelProperty.SpawnFlagZombie":"旗帜波自动刷旗帜僵尸","LevelProperty.MaxPlainZombiesPerFlag":"旗帜波最小普僵数","LevelProperty.MusicType":"音乐","LevelProperty.MusicType.-1":"跟随场景","LevelProperty.MusicType.0":"静音","LevelProperty.MusicType.1":"白天（Grasswalk）","LevelProperty.MusicType.2":"黑夜（Moongrains）","LevelProperty.MusicType.3":"泳池（Watery Graves）","LevelProperty.MusicType.4":"迷雾（Rigor Mormist）","LevelProperty.MusicType.5":"屋顶（Graze the Roof）","LevelProperty.MusicType.6":"选卡（Choose Your Seeds）","LevelProperty.MusicType.7":"主菜单","LevelProperty.MusicType.8":"解谜模式（Cerebrawl）","LevelProperty.MusicType.9":"迷你游戏（Loonboon）","LevelProperty.MusicType.10":"传送带（Ultimate Battle）","LevelProperty.MusicType.11":"僵王博士（Brainiac Maniac）","LevelProperty.MusicType.12":"禅境花园（Zen Garden）","LevelProperty.MusicType.13":"长城白天","LevelProperty.MusicType.14":"盘丝洞","LevelProperty.MusicType.15":"白骨岭","LevelProperty.MusicType.16":"雷音寺","LevelProperty.MusicType.17":"火焰山","LevelProperty.MusicType.18":"牛魔王宫殿","LevelProperty.MusicType.19":"龙宫","LevelProperty.MusicType.20":"西游Boss","LevelProperty.MusicType.21":"We Are The World","LevelProperty.MusicType.22":"戴夫的后花园","LevelProperty.MusicType.23":"长城黑夜","LevelProperty.MusicType.24":"长城泳池","LevelProperty.MusicType.25":"雨林","LevelProperty.MusicType.26":"PvZ3露营地","LevelProperty.MusicType.27":"森林白天","LevelProperty.MusicType.28":"森林黑夜","LevelProperty.MusicType.29":"雨林Boss战1","LevelProperty.MusicType.30":"雨林Boss战2","LevelProperty.MusicType.31":"Zombies On Your Lawn","LevelProperty.MusicType.32":"中国园林","json.import":"导入现有关卡文件：","json.import.parse_error":"导入失败：文件不符合JSON格式。","json.import.invalid_root":"导入失败：JSON的根对象不合关卡文件的格式。","json.generate":"生成JSON","json.copy":"复制到剪贴板","json.copy.success":"JSON已复制到剪贴板！","json.copy.failure":"复制失败，请手动复制或使用保存功能。","json.save":"保存为文件","json.minimal":"最简化JSON"}};return dict[document.documentElement.lang][key]||key;}
+function changeLang(lang){if(document.documentElement.lang==lang)return;let url=new URL(location.href);if(!lang)
+lang=url.searchParams.get('lang')||'zh-CN';else{url.searchParams.forEach((_,key,parent)=>{parent.delete(key);});url.searchParams.set('lang',LANGS[lang]?lang:'zh-CN');history.pushState(null,'',url);}
+document.documentElement.lang=lang;for(let element of document.querySelectorAll('[data-i18n]')){let key=element.getAttribute('data-i18n');element.innerHTML=i18n(key);}
+for(let element of document.querySelectorAll('[data-i18n-placeholder]')){let key=element.id+'.placeholder';element.placeholder=i18n(key);}
+for(let label of document.getElementsByTagName('label')){if(label.hasAttribute('data-i18n'))continue;let key=label.htmlFor;label.innerHTML=i18n(key);}
+for(let optgroup of document.getElementsByTagName('optgroup')){let label=optgroup.getAttribute('data-i18n-label');if(label===null)continue;let ancestor=optgroup.closest('select').id;let key=ancestor+'.'+label;optgroup.label=i18n(key);}
+for(let option of document.getElementsByTagName('option')){let ancestor=option.closest('select').id;let key=ancestor+'.'+option.value;option.textContent=i18n(key);}}
+window.addEventListener('popstate',()=>changeLang());changeLang();function toggleOn(toggle){toggle.dataset.active=true;toggle.textContent='禁用';var containerId=toggle.id.replace('-toggle','-fields');var container=document.getElementById(containerId);container.style.display='block';}
+function toggleOff(toggle){toggle.dataset.active=false;toggle.textContent='启用';var containerId=toggle.id.replace('-toggle','-fields');var container=document.getElementById(containerId);container.style.display='none';}
+function toggleSwitch(toggle){if(toggle.dataset.active==='true')
+toggleOff(toggle);else
+toggleOn(toggle);}
+function makeSectionToggle(componentName){var toggle=document.getElementById(`${componentName}-toggle`);toggle.addEventListener('click',()=>{toggleSwitch(toggle);});}
+for(let input of document.getElementsByTagName('input')){if(input.type!='number')continue;input.addEventListener('change',event=>event.target.reportValidity());}function dumpLevelProperty(){let field=name=>document.getElementById('LevelProperty.'+name);return{Type:'LevelProperty',Name:field('Name').value,ChineseName:field('ChineseName').value,EnglishName:field('EnglishName').value,Icon:parseInt(field('Icon').value),IconImage:field('IconImage').value,Background:parseInt(field('Background').value),InitPlantColumn:field('InitPlantColumn').valueAsNumber,EasyUpgrade:field('EasyUpgrade').checked,NumWaves:field('NumWaves').valueAsNumber,WavesPerFlag:field('WavesPerFlag').valueAsNumber,StartingSun:field('StartingSun').valueAsNumber,StartingWave:field('StartingWave').valueAsNumber,StartingTime:field('StartingTime').valueAsNumber,AllowedZombies:null,SpawnFlagZombie:field('SpawnFlagZombie').checked,MaxPlainZombiesPerFlag:field('MaxPlainZombiesPerFlag').valueAsNumber,MusicType:parseInt(field('MusicType').value),};}
+function loadLevelProperty(data){let field=name=>document.getElementById('LevelProperty.'+name);loadTextInput(field('Name'),data.Name);loadTextInput(field('ChineseName'),data.ChineseName);loadTextInput(field('EnglishName'),data.EnglishName);loadSelectInput(field('Icon'),data.Icon);loadTextInput(field('IconImage'),data.IconImage);loadSelectInput(field('Background'),data.Background);loadNumberInput(field('InitPlantColumn'),data.InitPlantColumn);loadCheckboxInput(field('EasyUpgrade'),data.EasyUpgrade);loadNumberInput(field('NumWaves'),data.NumWaves);loadNumberInput(field('WavesPerFlag'),data.WavesPerFlag);loadNumberInput(field('StartingSun'),data.StartingSun);loadNumberInput(field('StartingWave'),data.StartingWave);loadNumberInput(field('StartingTime'),data.StartingTime);loadCheckboxInput(field('SpawnFlagZombie'),data.SpawnFlagZombie);loadNumberInput(field('MaxPlainZombiesPerFlag'),data.MaxPlainZombiesPerFlag);loadSelectInput(field('MusicType'),data.MusicType);}
+function isBase64(str){if(typeof str!="string"||str.length%4!=0)return false;str=str.replace(/={1,2}$/,'');return /^[A-Za-z0-9+/]*$/.test(str);}
+var element=document.getElementById('load-icon');element.addEventListener('change',event=>{const file=event.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=event=>{const bytes=new Uint8Array(event.target.result);let binaryText="";for(let byte of bytes)
+binaryText+=String.fromCharCode(byte);let textArea=document.getElementById('LevelProperty.IconImage');textArea.value=btoa(binaryText);};reader.readAsArrayBuffer(file);});function loadTextInput(element,value){if(typeof value!='string')return;element.value=value;}
+function loadNumberInput(element,value){if(typeof value!='number')return;element.value=value;}
+function loadCheckboxInput(element,value){if(typeof value!='boolean')return;element.checked=value;}
+function loadSelectInput(element,value){for(let option of element.options)
+if(option.value==value){element.value=value;return;}}
+function importJson(jsonText,silent=false){try{var json=JSON.parse(jsonText);}
+catch(error){console.log(error);if(!silent)alert(i18n('json.import.parse_error'));return false;}
+let isArray=obj=>typeof obj=='object'&&Array.isArray(obj);let isObject=obj=>typeof obj=='object'&&!Array.isArray(obj);if(!isObject(json)||json.Version!==2||!isArray(json.Components)){if(!silent)alert(i18n('json.import.invalid_root'));return false;}
+for(let c of json.Components){if(!isObject(c))continue;if(c.Type==='LevelProperty')loadLevelProperty(c);}
+return true;}
+document.getElementById('import-json').addEventListener('change',event=>{const file=event.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=event=>importJson(event.target.result);reader.readAsText(file,'utf-8');});function copyJson(){const jsonOutput=document.getElementById('json-output');const text=jsonOutput.textContent;navigator.clipboard.writeText(text).then(()=>{alert(i18n('json.copy.success'));},()=>{alert(i18n('json.copy.failure'));});}
+document.getElementById('copy-json').addEventListener('click',copyJson);function generateJson(){for(let input of document.getElementsByTagName('input')){if(input.closest('.hidden'))continue;if(!input.reportValidity())return;}
+let components=[];let push=c=>{if(c)components.push(c);};push(dumpLevelProperty());let jsonOutput=document.getElementById('json-output');let levelData={Version:2,Components:components};let json=JSON.stringify(levelData);localStorage.setItem('levelData',json);if(document.getElementById('minimal-json').checked)
+jsonOutput.classList.add('json-output-minimal');else{json=JSON.stringify(levelData,null,2);jsonOutput.classList.remove('json-output-minimal');}
+jsonOutput.textContent=json;}
+var element=document.getElementById('generate-json');element.addEventListener('click',generateJson);function saveJson(){const json=document.getElementById('json-output').textContent;if(/^\s*$/.test(json))return;const blob=new Blob([json],{type:'application/json'});const url=URL.createObjectURL(blob);const levelName=document.getElementById('LevelProperty.Name').value;let a=document.createElement('a');a.href=url;a.download=(levelName||'level')+'.json';a.click();URL.revokeObjectURL(url);}
+document.getElementById('save-json').addEventListener('click',saveJson);var element=document.getElementById('minimal-json');var classList=document.getElementById('json-output').classList;element.checked=localStorage.getItem('minimalJson')==='true';if(element.checked)
+classList.add('json-output-minimal');else
+classList.remove('json-output-minimal');element.addEventListener('change',event=>{localStorage.setItem('minimalJson',event.target.checked);});if(!importJson(localStorage.getItem('levelData'),true))
+localStorage.removeItem('levelData');</script>
+</body></html>
